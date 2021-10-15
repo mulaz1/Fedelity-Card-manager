@@ -1,17 +1,15 @@
-//
-//  FriendTableDetailTableViewController.m
-//  MyFriendList
-//
-//  Created by Simone Cirani on 23/04/21.
-//
-
 #import "FriendTableDetailTableViewController.h"
+#import <CoreLocation/CoreLocation.h>
+
 
 @interface FriendTableDetailTableViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *firstnameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastnameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *companyName;
+@property (weak, nonatomic) IBOutlet UILabel *Code;
 @property (weak,nonatomic) IBOutlet UIImageView *QRresizeImage;
+@property (weak,nonatomic) IBOutlet UIImageView *Logo;
+
+@property (nonatomic,strong) CLLocationManager *locationManager;
+
 
 @end
 
@@ -19,11 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.theCard.displayName;
-    self.firstnameLabel.text = self.theCard.companyName;
-    self.lastnameLabel.text = self.theCard.personalCode;
-    
-    self.QRresizeImage.image = [UIImage imageWithCIImage: [self generateBarcode:@"123456789"]];
+    self.companyName.text = self.theCard.displayName;
+    self.Code.text = self.theCard.displayCode;
+    self.Logo.image = self.theCard.getLogo;
+    self.QRresizeImage.image = [UIImage imageWithCIImage: [self generateBarcode: self.theCard.displayCode]];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

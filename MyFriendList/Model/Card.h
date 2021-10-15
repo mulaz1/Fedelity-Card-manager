@@ -9,24 +9,28 @@
 #define Card_h
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Card : NSObject
 
 - (instancetype)initWithCompanyName:(NSString *)companyName
                         personalCode:(NSString *)personalCode
-                          ImageCode:(NSInteger)ImageCode
-                     backgroundCode:(NSInteger)backgroundCode
+                          Logo:(UIImage *)Logo
+                     background:(UIColor *)background
                      position:(NSString *)position;
 
 @property (nonatomic, strong) NSString *companyName;
 @property (nonatomic, strong) NSString *personalCode;
 @property (nonatomic, strong) NSString *position;
-@property (nonatomic) NSInteger Imagecode;
-@property (nonatomic) NSInteger backgroundCode;
+@property (nonatomic) UIImage *logo;
+@property (nonatomic) UIColor *background;
 
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *displayPosition;
-@property (nonatomic, readonly) NSInteger getBackgroundCode;
+@property (nonatomic, readonly) NSString *displayCode;
+@property (nonatomic, readonly) UIColor *getBackground;
+@property (nonatomic, readonly) UIImage *getLogo;
+
 
 @end
 

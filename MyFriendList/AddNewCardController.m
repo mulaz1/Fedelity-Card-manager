@@ -19,7 +19,7 @@
 @property (weak,nonatomic) IBOutlet UITextField *position;
 
 //image code to save on database
-@property(nonatomic) NSInteger codeImage;
+@property(nonatomic) UIColor *background;
 @property(nonatomic,strong) UIImage *logo;
 @property(nonatomic,strong) NSString *companyNameString;
 @property(nonatomic,strong) NSString *userCodeString;
@@ -35,22 +35,18 @@
 
 - (IBAction)TealButtonPressed:(id)sender{
     self.selectColor.backgroundColor = UIColor.systemTealColor;
-    self.codeImage = 1;
 }
 
 - (IBAction)RedButtonPressed:(id)sender{
     self.selectColor.backgroundColor = UIColor.redColor;
-    self.codeImage = 2;
 }
 
 - (IBAction)OrangeButtonPressed:(id)sender{
     self.selectColor.backgroundColor = UIColor.orangeColor;
-    self.codeImage = 3;
 }
 
 - (IBAction)GreenButtonPressed:(id)sender{
     self.selectColor.backgroundColor = UIColor.systemGreenColor;
-    self.codeImage = 4;
 }
 
 - (IBAction)imageSelectButtonPressed:(id<UINavigationControllerDelegate,
@@ -67,12 +63,14 @@
     // output image
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.logoImage.image = chosenImage;
+    self.logo = chosenImage;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 -(IBAction) addCardToList:(id)sender{
-    [CardList add:[[Card alloc] initWithCompanyName:@"COOP" personalCode:@"12344567654" ImageCode:1 backgroundCode: 1 position: @"Via dal mio prato 60B"]];
+    
+    [CardList add:[[Card alloc] initWithCompanyName: self.companyName.text personalCode: self.code.text Logo: self.logo  background: self.selectColor.backgroundColor position: self.position.text]];
     NSLog(@"Elemento aggiunto");
 }
 
