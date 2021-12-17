@@ -14,9 +14,10 @@
 
 + (long)size;
 + (NSArray *)getAll;
-+ (void)add:(Card *)f;
++ (void)add:(Card *)c;
 + (Card *)getAtIndex:(NSInteger)index;
 + (void) initList;
++ (void) removeCard:(Card *)card;
 @end
 
 #endif /* CardList_h */

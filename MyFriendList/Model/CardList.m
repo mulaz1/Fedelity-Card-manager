@@ -27,8 +27,8 @@ static NSMutableArray *list;
     return list;
 }
 
-+ (void)add:(Card *)f{
-    [list addObject:f];
++ (void)add:(Card *)c{
+    [list addObject:c];
 }
 
 + (Card *)getAtIndex:(NSInteger)index{
@@ -39,6 +39,12 @@ static NSMutableArray *list;
     list = [[NSMutableArray alloc] init];
 }
 
++(void)removeCard:(Card *)card{
+    for (Card * cardTemp in list){
 
+     if ([cardTemp.displayName isEqualToString: card.displayName])
+         [list removeObject: cardTemp];
+    }
+}
 
 @end

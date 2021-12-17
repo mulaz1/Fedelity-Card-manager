@@ -1,19 +1,12 @@
-//
-//  FriendListTableViewController.m
-//  MyFriendList
-//
-//  Created by Simone Cirani on 23/04/21.
-//
-
-#import "FriendListTableViewController.h"
+#import "CardListTableViewController.h"
 #import "CardList.h"
 #import "Card.h"
-#import "FriendTableDetailTableViewController.h"
+#import "CardTableDetailTableViewController.h"
 #import "Model/DBConnection.h"
 #import "Model/Database.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface FriendListTableViewController ()<CLLocationManagerDelegate>
+@interface CardListTableViewController ()<CLLocationManagerDelegate>
 
     @property (nonatomic, strong) CardList *cards;
     @property (nonatomic,strong) CLLocationManager *locationManager;
@@ -21,7 +14,7 @@
 
 @end
 
-@implementation FriendListTableViewController
+@implementation CardListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,8 +70,8 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"ShowCardDetail"]){
-        if([segue.destinationViewController isKindOfClass:[FriendTableDetailTableViewController class]]){
-            FriendTableDetailTableViewController *vc = (FriendTableDetailTableViewController *)segue.destinationViewController;
+        if([segue.destinationViewController isKindOfClass:[CardTableDetailTableViewController class]]){
+            CardTableDetailTableViewController *vc = (CardTableDetailTableViewController *)segue.destinationViewController;
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             Card *f = [CardList getAtIndex:indexPath.row];
             vc.theCard = f;
@@ -90,5 +83,7 @@
     if(!_locationManager) _locationManager = [[CLLocationManager alloc] init];
     return _locationManager;
    }
+
+
 
 @end

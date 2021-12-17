@@ -70,8 +70,12 @@
 
 -(IBAction) addCardToList:(id)sender{
     
-    [CardList add:[[Card alloc] initWithCompanyName: self.companyName.text personalCode: self.code.text Logo: self.logo  background: self.selectColor.backgroundColor position: self.position.text]];
+    id card = [[Card alloc] initWithCompanyName: self.companyName.text personalCode: self.code.text Logo: self.logo  background: self.selectColor.backgroundColor position: self.position.text];
     NSLog(@"Elemento aggiunto");
+    
+    //notifica al controller CardListTableViewController
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:card forKey:@"NewCard"];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"NewCardData" object:nil userInfo:userInfo];
 }
 
 @end
