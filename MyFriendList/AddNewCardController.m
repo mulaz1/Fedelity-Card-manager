@@ -72,10 +72,10 @@
     
     id card = [[Card alloc] initWithCompanyName: self.companyName.text personalCode: self.code.text Logo: self.logo  background: self.selectColor.backgroundColor position: self.position.text];
     NSLog(@"Elemento aggiunto");
-    
     //notifica al controller CardListTableViewController
     NSDictionary *cardInfo = [NSDictionary dictionaryWithObject:card forKey:@"NewCard"];
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"NewCardData" object:nil userInfo:cardInfo ];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"NewCardData" object:nil userInfo:cardInfo];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

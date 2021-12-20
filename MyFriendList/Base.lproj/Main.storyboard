@@ -143,11 +143,14 @@
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="weQ-Db-0In" id="xjo-yy-uww"/>
-                            <outlet property="delegate" destination="weQ-Db-0In" id="uGe-4K-B4m"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Card Detail" leftItemsSupplementBackButton="YES" id="N4o-pe-skP">
-                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="cmM-jl-neB"/>
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="cmM-jl-neB">
+                            <connections>
+                                <action selector="removeCard:" destination="weQ-Db-0In" id="1qv-4o-03y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="Code" destination="Oe9-oc-IxJ" id="jkD-yP-ZvX"/>

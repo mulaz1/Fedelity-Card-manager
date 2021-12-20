@@ -42,9 +42,16 @@ CIImage *barCodeImage = barCodeFilter.outputImage;
 return barCodeImage;
 }
 
--(IBAction) removeCard:(UIBarButtonItem* )sender{
-//    [CardList removeCard:self.theCard];
-//    [self.navigationController popViewControllerAnimated:YES];
+-(IBAction) removeCard:(id)sender{
+    
+    //notifica al controller CardListTableViewController di rimuovere dalla lista
+   // constrollo sull'immagine
+    if(![self.Logo isEqual:nil]){
+        NSDictionary *cardInfo = [NSDictionary dictionaryWithObject:self.theCard forKey:@"DeleteCard"];
+        [[NSNotificationCenter defaultCenter] postNotificationName: @"DeleteCard" object:nil userInfo:cardInfo];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
 }
 
 @end

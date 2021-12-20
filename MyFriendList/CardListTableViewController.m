@@ -34,13 +34,22 @@
             selector:@selector(receiveTestNotification:)
             name:@"NewCardData"
             object: nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+            selector:@selector(receiveTestNotification:)
+            name:@"DeleteCard"
+            object: nil];
+    
+   // [self.cards add:[[Card alloc] initWithCompanyName: @"ciao" personalCode: @"lol" Logo: nil background: UIColor.blueColor  position: @"ciao"]];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
  [super viewWillAppear:animated];
  NSLog(@"view will Appear");
+ [self.tableView reloadData];
  //NSLog([NSString stringWithFormat:@"%d",self.cards.size]);
+
 }
 
 #pragma mark - Table view data source
@@ -90,13 +99,18 @@
 - (void) receiveTestNotification:(NSNotification *) notification {
 
     NSDictionary *cardInfo = notification.userInfo;
-    Card *myObject = [cardInfo objectForKey:@"NewCardData"];
-    [self.cards add:myObject];
     
-}
-
-- (void)handleNotification:(NSNotification*)note {
-  NSLog(@"Got notified: %@", note);
+    NSLog(@"%@",cardInfo);
+    if ([[notification name] isEqualToString:@"NewCardData"]){
+        Card *card = [cardInfo objectForKey:@"NewCard"];
+        [self.cards add:card];
+    }
+    
+    else if ([[notification name] isEqualToString:@"DeleteCard"]){
+        Card *card = [cardInfo objectForKey:@"DeleteCard"];
+        [self.cards removeCard:card];
+    }
+    
 }
 
 @end
