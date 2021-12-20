@@ -21,23 +21,26 @@
         
     self.title = @"Le mie carte";
     
-    [CardList initList];
+    self.cards = [[CardList alloc] init];
     
     //Configuro il location menager, setto il delegate e faccio partire l'updating della posizione
     self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;  //non la migliore geolocalizzazione perche' non interessa la precisione in questo caso
      self.locationManager.distanceFilter = 100;
      self.locationManager.delegate = self;
      [self.locationManager startUpdatingLocation];
-    
-    //creo una carda temporanea di prova alla inizializzazione
-    [CardList add:[[Card alloc] initWithCompanyName:@"Prova" personalCode:@"12344567654" Logo: nil background: UIColor.grayColor position: @"Via emilia 60B"]];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+        
+    [[NSNotificationCenter defaultCenter] addObserver:self
+            selector:@selector(receiveTestNotification:)
+            name:@"NewCardData"
+            object: nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+ [super viewWillAppear:animated];
  NSLog(@"view will Appear");
- [self.tableView reloadData];
+ //NSLog([NSString stringWithFormat:@"%d",self.cards.size]);
 }
 
 #pragma mark - Table view data source
@@ -47,19 +50,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [CardList size];
+    return self.cards.size;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendCell" forIndexPath:indexPath];
-    Card *f = [CardList getAtIndex:indexPath.row];
-    cell.textLabel.text = f.displayName;
-    cell.detailTextLabel.text = f.displayPosition;
+    Card *c = [self.cards getAtIndex:indexPath.row];
+    cell.textLabel.text = c.displayName;
+    cell.detailTextLabel.text = c.displayPosition;
     
-    cell.backgroundColor = f.getBackground;
+    cell.backgroundColor = c.getBackground;
     cell.textLabel.textColor  = UIColor.whiteColor;
     cell.detailTextLabel.textColor = UIColor.whiteColor;
-    cell.imageView.image = f.getLogo;
+    cell.imageView.image = c.getLogo;
    
     return cell;
 }
@@ -73,7 +76,7 @@
         if([segue.destinationViewController isKindOfClass:[CardTableDetailTableViewController class]]){
             CardTableDetailTableViewController *vc = (CardTableDetailTableViewController *)segue.destinationViewController;
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-            Card *f = [CardList getAtIndex:indexPath.row];
+            Card *f = [self.cards getAtIndex:indexPath.row];
             vc.theCard = f;
         }
    }
@@ -84,6 +87,16 @@
     return _locationManager;
    }
 
+- (void) receiveTestNotification:(NSNotification *) notification {
 
+    NSDictionary *cardInfo = notification.userInfo;
+    Card *myObject = [cardInfo objectForKey:@"NewCardData"];
+    [self.cards add:myObject];
+    
+}
+
+- (void)handleNotification:(NSNotification*)note {
+  NSLog(@"Got notified: %@", note);
+}
 
 @end

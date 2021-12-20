@@ -43,9 +43,8 @@ return barCodeImage;
 }
 
 -(IBAction) removeCard:(UIBarButtonItem* )sender{
-    [CardList removeCard:self.theCard];
-    [self.navigationController popViewControllerAnimated:YES];
-    
+//    [CardList removeCard:self.theCard];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -7,43 +7,40 @@
 
 #import <Foundation/Foundation.h>
 #import "CardList.h"
-
-static NSMutableArray *list;
+@interface CardList ()
+    @property (nonatomic, strong) NSMutableArray *list;
+@end
 
 @implementation CardList
 
 - (instancetype)init{
     if(self = [super init]){
-        list = [[NSMutableArray alloc] init];
+       _list = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-+ (long)size{
-    return list.count;
+- (long)size{
+    return self.list.count;
 }
 
-+ (NSArray *)getAll{
-    return list;
+- (NSArray *)getAll{
+    return self.list;
 }
 
-+ (void)add:(Card *)c{
-    [list addObject:c];
+- (void)add:(Card *)c{
+    [self.list addObject:c];
 }
 
-+ (Card *)getAtIndex:(NSInteger)index{
-    return [list objectAtIndex:index];
+- (Card *)getAtIndex:(NSInteger)index{
+    return [self.list objectAtIndex:index];
 }
 
-+ (void)initList{
-    list = [[NSMutableArray alloc] init];
-}
-
-+(void)removeCard:(Card *)card{
-    for (Card * cardTemp in list){
+-(void)removeCard:(Card *)card{
+    for (Card * cardTemp in self.list){
 
      if ([cardTemp.displayName isEqualToString: card.displayName])
-         [list removeObject: cardTemp];
+         [self.list removeObject: cardTemp];
     }
 }
 

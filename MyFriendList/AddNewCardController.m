@@ -74,8 +74,9 @@
     NSLog(@"Elemento aggiunto");
     
     //notifica al controller CardListTableViewController
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:card forKey:@"NewCard"];
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"NewCardData" object:nil userInfo:userInfo];
+    NSDictionary *cardInfo = [NSDictionary dictionaryWithObject:card forKey:@"NewCard"];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"NewCardData" object:nil userInfo:cardInfo ];
+    
 }
 
 @end

@@ -12,12 +12,11 @@
 
 @interface CardList : NSObject
 
-+ (long)size;
-+ (NSArray *)getAll;
-+ (void)add:(Card *)c;
-+ (Card *)getAtIndex:(NSInteger)index;
-+ (void) initList;
-+ (void) removeCard:(Card *)card;
+- (long)size;
+- (NSArray *)getAll;
+- (void)add:(Card *)c;
+- (Card *)getAtIndex:(NSInteger)index;
+- (void) removeCard:(Card *)card;
 @end
 
 #endif /* CardList_h */

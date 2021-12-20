@@ -138,32 +138,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Section-3" id="eYK-tp-Vnm">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="13K-M9-1xc">
-                                        <rect key="frame" x="20" y="608" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="13K-M9-1xc" id="hQa-ib-ZZT">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93G-Hc-F2d">
-                                                    <rect key="frame" x="0.0" y="6" width="374" height="30"/>
-                                                    <state key="normal" title="Delete">
-                                                        <color key="titleColor" systemColor="systemPinkColor"/>
-                                                        <color key="titleShadowColor" systemColor="systemRedColor"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="93G-Hc-F2d" firstAttribute="leading" secondItem="hQa-ib-ZZT" secondAttribute="leadingMargin" constant="-20" id="1oe-l4-gzV"/>
-                                                <constraint firstItem="93G-Hc-F2d" firstAttribute="centerX" secondItem="hQa-ib-ZZT" secondAttribute="centerX" id="D1c-9f-Sqt"/>
-                                                <constraint firstItem="93G-Hc-F2d" firstAttribute="centerY" secondItem="hQa-ib-ZZT" secondAttribute="centerY" id="Iyc-yA-6Jb"/>
-                                                <constraint firstItem="93G-Hc-F2d" firstAttribute="top" secondItem="hQa-ib-ZZT" secondAttribute="topMargin" constant="-5" id="isk-0E-Jlt"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <rect key="contentStretch" x="0.0" y="0.75" width="1" height="1"/>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -431,93 +406,23 @@
             </objects>
             <point key="canvasLocation" x="-477" y="644"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="tQB-4y-F04">
-            <objects>
-                <tableViewController id="7eT-mW-oBs" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7wg-Cj-3Zw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="JWi-4a-pUg">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="V56-UC-xnB">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V56-UC-xnB" id="Cpj-A8-KFp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgA-ze-7Eq">
-                                                    <rect key="frame" x="20" y="6" width="374" height="30"/>
-                                                    <state key="normal" title="CARD LIST"/>
-                                                    <connections>
-                                                        <segue destination="jtu-7y-GM2" kind="show" id="qIb-1U-RxV"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rgA-ze-7Eq" firstAttribute="leading" secondItem="Cpj-A8-KFp" secondAttribute="leadingMargin" id="Pck-Bq-xKU"/>
-                                                <constraint firstItem="rgA-ze-7Eq" firstAttribute="top" secondItem="Cpj-A8-KFp" secondAttribute="topMargin" constant="-5" id="U80-UM-d09"/>
-                                                <constraint firstItem="rgA-ze-7Eq" firstAttribute="trailing" secondItem="Cpj-A8-KFp" secondAttribute="trailingMargin" id="ilH-se-mL4"/>
-                                                <constraint firstItem="rgA-ze-7Eq" firstAttribute="centerY" secondItem="Cpj-A8-KFp" secondAttribute="centerY" id="xg5-D7-tnd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="A20-7V-vLg">
-                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A20-7V-vLg" id="YOT-Py-Og4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWc-vF-UwO">
-                                                    <rect key="frame" x="20" y="7" width="387" height="30"/>
-                                                    <state key="normal" title="ADD NEW CARD"/>
-                                                    <connections>
-                                                        <segue destination="2F7-ru-6BH" kind="show" id="RZM-wE-6Qx"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="SWc-vF-UwO" secondAttribute="trailing" constant="-13" id="A3a-c0-Fm8"/>
-                                                <constraint firstItem="SWc-vF-UwO" firstAttribute="centerY" secondItem="YOT-Py-Og4" secondAttribute="centerY" id="Yiz-8I-Zih"/>
-                                                <constraint firstItem="SWc-vF-UwO" firstAttribute="leading" secondItem="YOT-Py-Og4" secondAttribute="leadingMargin" id="vD9-mf-ZSp"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="7eT-mW-oBs" id="FXY-o8-Hfx"/>
-                            <outlet property="delegate" destination="7eT-mW-oBs" id="7HJ-3o-aoe"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="k28-E9-67m"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FO1-oT-7JX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1514" y="302"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="enS-cP-DUD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWT-cP-gE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="g09-FV-5gd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqt-Bt-co7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7eT-mW-oBs" kind="relationship" relationship="rootViewController" id="EMk-Ni-LHi"/>
+                        <segue destination="jtu-7y-GM2" kind="relationship" relationship="rootViewController" id="hA9-bs-cdt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IWT-cP-gE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2165" y="302"/>
+            <point key="canvasLocation" x="-1183" y="-42"/>
         </scene>
-        <!--Card List Table View Controller-->
+        <!--Title-->
         <scene sceneID="sNa-OD-cya">
             <objects>
                 <tableViewController id="jtu-7y-GM2" customClass="CardListTableViewController" sceneMemberID="viewController">
@@ -563,7 +468,13 @@
                             <outlet property="delegate" destination="jtu-7y-GM2" id="6wG-WX-YS1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="z3S-WK-wKt"/>
+                    <navigationItem key="navigationItem" title="Title" id="QfL-a0-nzj">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="uP4-Mb-TnJ">
+                            <connections>
+                                <segue destination="2F7-ru-6BH" kind="show" id="XII-Xt-5PO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPc-LT-jYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -588,9 +499,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
