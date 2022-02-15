@@ -1,4 +1,4 @@
-# Fedelity-Card-manager
+# Fedelity Card manager
 
 ## The Project 
 
