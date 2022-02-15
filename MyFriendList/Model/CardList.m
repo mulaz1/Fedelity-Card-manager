@@ -37,10 +37,16 @@
 }
 
 -(void)removeCard:(Card *)card{
-    for (Card * cardTemp in self.list){
-
-     if ([cardTemp.displayName isEqualToString: card.displayName])
-         [self.list removeObject: cardTemp];
+//    for (Card * cardTemp in self.list){
+//
+//     if ([cardTemp.displayName isEqualToString: card.displayName])
+//         [self.list removeObject: cardTemp];
+//    }
+    for (long i = self.list.count-1 ; i >= 0 ; i--){
+        Card *tempCard = self.list[i];
+        if ([tempCard.displayName isEqualToString: card.displayName])
+            [self.list removeObjectAtIndex:i];
+        
     }
 }
 

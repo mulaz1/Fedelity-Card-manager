@@ -97,13 +97,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Codice cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXq-xx-fyD">
-                                                    <rect key="frame" x="19" y="9" width="130" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" systemColor="systemBlueColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -412,7 +405,6 @@
         <!--Navigation Controller-->
         <scene sceneID="enS-cP-DUD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IWT-cP-gE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="g09-FV-5gd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqt-Bt-co7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -422,6 +414,7 @@
                         <segue destination="jtu-7y-GM2" kind="relationship" relationship="rootViewController" id="hA9-bs-cdt"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWT-cP-gE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1183" y="-42"/>
         </scene>
@@ -493,9 +486,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

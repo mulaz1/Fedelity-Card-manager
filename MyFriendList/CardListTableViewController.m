@@ -11,10 +11,13 @@
     @property (nonatomic, strong) CardList *cards;
     @property (nonatomic,strong) CLLocationManager *locationManager;
     @property (nonatomic, strong) NSString *Address;
+    @property (nonatomic,strong) CLGeocoder *geocoder;
 
 @end
 
 @implementation CardListTableViewController
+
+int locationFetchCounter = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,12 +27,16 @@
     self.cards = [[CardList alloc] init];
     
     //Configuro il location menager, setto il delegate e faccio partire l'updating della posizione
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;  //non la migliore geolocalizzazione perche' non interessa la precisione in questo caso
-     self.locationManager.distanceFilter = 100;
-     self.locationManager.delegate = self;
-     [self.locationManager startUpdatingLocation];
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;  //non la migliore geolocalizzazione perche' non interessa la precisione in questo caso
+//        self.locationManager = [[CLLocationManager alloc] init];
+//        self.locationManager.delegate = self;
+//        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//        self.locationManager.distanceFilter = 100;
+//        self.locationManager.delegate = self;
+//        self.geocoder = [[CLGeocoder alloc] init];
+    
+    //notfication manage
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-        
     [[NSNotificationCenter defaultCenter] addObserver:self
             selector:@selector(receiveTestNotification:)
             name:@"NewCardData"
@@ -40,8 +47,31 @@
             name:@"DeleteCard"
             object: nil];
     
+//    [self.locationManager startUpdatingLocation];
+    
    // [self.cards add:[[Card alloc] initWithCompanyName: @"ciao" personalCode: @"lol" Logo: nil background: UIColor.blueColor  position: @"ciao"]];
 }
+
+//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+//    // this delegate method is constantly invoked every some miliseconds.
+//    // we only need to receive the first response, so we skip the others.
+//    if (locationFetchCounter > 0) return;
+//    locationFetchCounter++;
+//    [self.geocoder geocodeAddressString:@"via della salute,82" completionHandler:^(NSArray *placemarks, NSError *error){
+//        if(!error)
+//             {
+//                 CLPlacemark *placemark = [placemarks objectAtIndex:0];
+//                 NSLog(@"%f",placemark.location.coordinate.latitude);
+//                 NSLog(@"%f",placemark.location.coordinate.longitude);
+//                 NSLog(@"%@",[NSString stringWithFormat:@"%@",[placemark description]]);
+//             }
+//             else
+//             {
+//                 NSLog(@"There was a forward geocoding error\n%@",[error localizedDescription]);
+//             }
+//    }];
+//}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {

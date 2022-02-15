@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CardTableDetailTableViewController : UITableViewController
+@interface CardTableDetailTableViewController : UITableViewController 
 
 @property (nonatomic, strong) Card *theCard;
 
